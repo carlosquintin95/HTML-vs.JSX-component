@@ -1,9 +1,20 @@
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+/* Normalize spacing; width includes padding and border */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ==========================================================================
+   Page
+   ========================================================================== */
+
+/* Full-viewport canvas: Inter font, warm off-white background, centered content */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,6 +25,30 @@ body {
     padding: 20px;
 }
 
+/* Fixed pill at top — “HTML version” demo label */
+.page-label {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    background: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.page-label strong {
+    color: #333;
+}
+
+
+/* ==========================================================================
+   Pricing cards — layout
+   ========================================================================== */
+
+/* Horizontal row; 24px gap between cards */
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -23,6 +58,7 @@ body {
     align-items: flex-start;
 }
 
+/* Single card shell: 320×min 380px, stone background, 4px radius */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +70,18 @@ body {
     flex-shrink: 0;
 }
 
+/* Upper block: title, price, feature list (grows above the button) */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+
+/* ==========================================================================
+   Pricing cards — typography
+   ========================================================================== */
+
+/* Plan name (e.g. Hobby, Pro) */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +90,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price row container */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -54,32 +98,42 @@ body {
     align-items: baseline;
 }
 
+/* Main price figure ($20, Free) */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Billing suffix (/mo.) */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Space below features before the CTA */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* “Includes:” / “Everything in…” intro line */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+
+/* ==========================================================================
+   Pricing cards — feature list
+   ========================================================================== */
+
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* One feature row: checkmark + label */
 .features-list li {
     display: flex;
     align-items: center;
@@ -95,6 +149,12 @@ body {
     font-weight: 400;
 }
 
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+/* Base CTA: pill shape, pinned to bottom of card */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -117,6 +177,7 @@ body {
     background-color: #D8D6CE;
 }
 
+/* Primary: dark fill (Pro / Enterprise) */
 .download-button.primary {
     background-color: #111;
     color: #fff;
@@ -130,19 +191,16 @@ body {
     background-color: #333;
 }
 
-.page-label {
-    position: fixed;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    color: #666;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* Tertiary: muted stone (optional variant) */
+.download-button.tertiary {
+    background-color: #D8D6CE;
+    color: #333;
 }
 
-.page-label strong {
-    color: #333;
+.download-button.tertiary:hover {
+    background-color: #D8D6CE;
+}
+
+.download-button.tertiary:active {
+    background-color: #D8D6CE;
 }
